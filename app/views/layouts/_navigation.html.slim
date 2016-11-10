@@ -1,9 +1,12 @@
 .navbar-fixed
   nav
-    .nav-wrapper
-      = link_to(t('site_title'), root_path, class: 'brand-logo')
-      ul.right.hide-on-med-and-down
-        li
-          a href='#' Link 1
-        li
-          a href='#' Link 2
+    .container
+      .nav-wrapper
+        = link_to(t('site_title'), root_path, class: 'brand-logo')
+        ul.right.hide-on-med-and-down
+          li = link_to(t('projects'), projects_path)
+          li = link_to(t('blog'), blogs_path)
+          - if admin_signed_in?
+            li = link_to(t('admin_blogs'), admin_blogs_path)
+            li = link_to(t('admin_projects'), admin_projects_path)
+            li = link_to(t('sign_out'), destroy_admin_session_path)

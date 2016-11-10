@@ -1,0 +1,10 @@
+nav.breadcrumb-nav.z-depth-0
+  .container
+    .nav-wrapper
+      .col.s12
+        = link_to(t('home'), root_path, class: 'breadcrumb')
+        = link_to(t('blog'), blogs_path, class: 'breadcrumb')
+        span.breadcrumb = @blog.title
+.container
+  h1 = @blog.title
+  = @markdown.render(@blog.body).html_safe

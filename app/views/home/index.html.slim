@@ -1,5 +1,21 @@
-.row
-  .col.m4.s12.center-align
-    h1 = t('home_greeting')
-  .col.m8.s12
-    p This is some text on the other side
+.primary-content.red.lighten-5
+  .container
+    .row
+      .col.s12.center-align
+        h1 = t('home_greeting')
+      .col.s12
+        = simple_format(t('about_me'))
+.primary-content
+  .row
+    .col.s12.center-align
+      h1 = t('recent_activity')
+  .row
+    .col.m4.s12.center-align
+      h3 New blog post!
+      p Added a blog giving a describing a detailed approach to using bottled_services to help keep your project source DRY, and speed up development time.
+    .col.m4.s12.center-align
+      h3 bottled_services gem
+      p Released first production version of bottled_services (v0.1.3), A gem designed to make creating and using services as simple and quick as can be.
+    .col.m4.s12.center-align
+      h3 Ruby Rampage 2016
+      p Took part in 2016's Ruby Rampage 48 hour Hackathon. Entered as a solo team competing with some great programmers and members of the Ruby community, entering with a multiplayer typing game using Rails 5 and Action Cable.

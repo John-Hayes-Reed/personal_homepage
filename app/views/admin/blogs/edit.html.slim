@@ -1,0 +1,6 @@
+.container
+  h1 = t('edit_blog')
+  = link_to(t('back'), blog_path(@blog), class: 'btn')
+  br
+	br
+  = render 'form'

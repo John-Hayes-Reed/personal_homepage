@@ -1,0 +1,13 @@
+.container
+  h1 = t('blog')
+  = link_to(t('back'), admin_blogs_path, class: 'btn')
+  = link_to(edit_admin_blog_path(@blog), class: 'btn btn-small') do
+    i.material-icons mode_edit
+  br
+  br
+  .row
+    .col.l2.s12 Title
+    .col.l10.s12 = @blog.title
+  .row
+    .col.l2.s12 Body
+    .col.l10.s12 = @markdown.render(@blog.body).html_safe

@@ -1,0 +1,24 @@
+nav.breadcrumb-nav.z-depth-0
+  .container
+    .nav-wrapper
+      .col.s12
+        = link_to(t('home'), root_path, class: 'breadcrumb')
+        = link_to(t('projects'), projects_path, class: 'breadcrumb')
+        span.breadcrumb = @project.title
+.container
+  .row
+    .col.s12
+      h1 = @project.title
+  .row
+    .col.l2.s12
+      = t('url')
+    .col.l10.s12
+      = link_to(@project.url, @project.url)
+  .row
+    .col.l2.s12
+      = t('project_type')
+    .col.l10.s12
+      = @project.project_type
+  .row
+    .col.s12
+      p = @project.description

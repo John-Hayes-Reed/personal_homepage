@@ -32,10 +32,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'bottled_services'
+gem 'bottled_services', '~> 0.1.3'
 gem 'devise'
 gem 'materialize-sass'
 gem 'slim'
+gem 'enumerize'
+gem 'redcarpet'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

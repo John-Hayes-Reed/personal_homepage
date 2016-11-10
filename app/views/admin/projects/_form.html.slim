@@ -1,0 +1,13 @@
+= form_for [:admin, @project] do |f|
+  .input-field
+    = f.label(:title)
+    = f.text_field(:title)
+  .input-field
+    = f.label(:url)
+    = f.text_field(:url)
+  .input-field
+    = f.select(:project_type, Project.project_type.options)
+  .input-field
+    = f.label(:description)
+    = f.text_area(:description, class: 'materialize-textarea')
+  = f.submit class: 'btn'

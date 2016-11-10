@@ -1,0 +1,18 @@
+.container
+  h1 = t('projects')
+  = link_to(t('new_project'), new_admin_project_path, class: 'btn')
+  table
+    thead
+      tr
+        th = t('activerecord.attributes.project.title')
+        th = t('activerecord.attributes.project.created_at')
+        th = t('activerecord.attributes.project.updated_at')
+        th
+    tbody
+      - @projects.each do |project|
+        tr
+          td = project.title
+          td = project.created_at
+          td = project.updated_at
+          td = link_to(admin_project_path(project), class: 'btn') do
+            i.material-icons visibility

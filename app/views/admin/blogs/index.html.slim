@@ -1,0 +1,19 @@
+.container
+  h1 Blogs
+  = link_to(t('new_blog'), new_admin_blog_path, class: 'btn')
+  table
+    thead
+      tr
+        th = t('active_record.attributes.blog.title')
+        th = t('active_record.attributes.blog.created_at')
+        th = t('active_record.attributes.blog.updated_at')
+        th
+    tbody
+      - @blogs.each do |blog|
+        tr
+          td = blog.title
+          td = blog.created_at
+          td = blog.updated_at
+          td
+            = link_to(admin_blog_path(blog), class: 'btn') do
+              i.material-icons visibility

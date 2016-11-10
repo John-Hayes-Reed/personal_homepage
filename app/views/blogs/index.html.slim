@@ -1,0 +1,11 @@
+nav.breadcrumb-nav.z-depth-0
+  .container
+    .nav-wrapper
+      .col.s12
+        = link_to(t('home'), root_path, class: 'breadcrumb')
+        span.breadcrumb = t('blog')
+.container
+  h1 = t('blog')
+  ul.collection
+    - @blogs.each do |blog|
+      = link_to blog.title, blog_path(blog), class: 'collection-item'

@@ -20,5 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  site_title: 'John Hayes-Reed'
-  home_greeting: 'Welcome!'
+  site_title: John Hayes-Reed
+  home_greeting: Welcome!
+  recent_activity: Recent Activity
+  about_me: |
+    Thank you for taking the time to visit my site. My name is John Hayes-Reed (as you probably guessed from the not so discreet insertion of my name into the navbar......and url). I am from Brighton - England, but currently live and work in Japan.
+
+    I am a full-stack engineer, a husband, a father, a coffee addict, a beer lover, a gamer, a hero by night, a part-time astronaut, and a gold medal winning extreme ironing olympic champion.....Ok not all of that is true, i'm not THAT addicted to coffee.
+
+    I work as a full-stack developer ranging from old legacy asp web systems, to modern hybrid mobile applications. My main focus and strength however is in Ruby on Rails web applications, and the ruby language in general (Metaprogramming FTW!).
+    I invite you to take a look at the projects page, which has a list of projects I have been or am involved in (the ones I am allowed to list anyway, privacy agreements prevent me from being able to list all). As well as my blog where I share my thoughts, on programming, development, work life, culture barriers, and hopefully much more.
