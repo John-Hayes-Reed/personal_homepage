@@ -9,4 +9,4 @@
           - if admin_signed_in?
             li = link_to(t('admin_blogs'), admin_blogs_path)
             li = link_to(t('admin_projects'), admin_projects_path)
-            li = link_to(t('sign_out'), destroy_admin_session_path)
+            li = link_to(t('sign_out'), destroy_admin_session_path, method: :delete)
