@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
 
   def show
     find_blog
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
   end
 
   private

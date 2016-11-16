@@ -7,7 +7,7 @@ class Admin::BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true)
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
   end
 
   def new
