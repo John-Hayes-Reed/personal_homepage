@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def show
     find_project
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
   end
 
   private

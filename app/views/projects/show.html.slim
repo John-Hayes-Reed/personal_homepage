@@ -21,4 +21,4 @@ nav.breadcrumb-nav.z-depth-0
       = @project.project_type
   .row
     .col.s12
-      p = @project.description
+      = @markdown.render(@project.description).html_safe

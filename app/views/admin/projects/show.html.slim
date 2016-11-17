@@ -16,4 +16,4 @@
     .col.l10.s12 = @project.project_type
   .row
     .col.l2.s12 =t('description')
-    .col.l10.s12 = @project.description
+    .col.l10.s12 = = @markdown.render(@project.description).html_safe

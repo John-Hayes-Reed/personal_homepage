@@ -1,12 +1,13 @@
 class Admin::ProjectsController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def index
     @projects = Project.all
   end
 
   def show
     find_project
+    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
   end
 
   def new
