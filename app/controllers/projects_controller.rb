@@ -7,6 +7,8 @@ class ProjectsController < ApplicationController
   def show
     find_project
     @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to projects_path, alert: t('project_not_found')
   end
 
   private
