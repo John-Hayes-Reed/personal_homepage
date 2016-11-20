@@ -30,3 +30,11 @@ en:
 
     I work as a full-stack developer ranging from old legacy asp web systems, to modern hybrid mobile applications. My main focus and strength however is in Ruby on Rails web applications, and the ruby language in general (Metaprogramming FTW!).
     I invite you to take a look at the projects page, which has a list of projects I have been or am involved in (the ones I am allowed to list anyway, privacy agreements prevent me from being able to list all). As well as my blog where I share my thoughts, on programming, development, work life, culture barriers, and hopefully much more.
+  home: Home
+  projects: Projects
+  blog: Blog
+  admin_blogs: Admin Blogs
+  admin_projects: Admin Projects
+  sign_out: Sign Out
+  url: URL
+  project_type: Project Type
