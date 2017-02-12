@@ -14,6 +14,9 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
  @import 'font-awesome';
+ @import 'home';
+ @import 'blogs';
+ @import 'projects';
 
 .contact-bar {
   position: fixed;

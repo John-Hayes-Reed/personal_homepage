@@ -1,3 +1,20 @@
 // Place all the styles related to the Blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+pre code {
+  display: block;
+  width: 100%;
+  padding-top: 0.2rem;
+  padding-right: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.2rem;
+  background-color: $gray-lighter;
+}
+
+blockquote {
+  border-left-style: solid;
+  border-left-width: 0.3rem;
+  border-left-color: $brand-primary;
+  padding-left: 0.4rem;
+}
