@@ -33,6 +33,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bottled_decorators', '~> 0.1.5'
 gem 'bottled_services', '~> 0.1.3'
 gem 'devise'
 gem 'slim'
@@ -52,6 +53,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rubocop'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

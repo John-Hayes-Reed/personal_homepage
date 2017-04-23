@@ -10,6 +10,30 @@
         .col-sm-12.center-align
           h1 = t('recent_activity')
       .jumbotron
+        h1.display-3 New blog post!
+        p.lead A blog about more advanced decorating concepts in ruby.
+        hr.my-4
+        p In my first blog I wrote about how decorators are supposed to be used, and why current popular 'decorator' gems are not actually decorators at all. In this post I build upon the basic from the previous post, and go on to display more advanced decorating techniques: Meta Decorators.
+        p.lead
+          = link_to(t('read_more'), blog_path(id: 4), class: 'btn btn-primary btn-lg')
+      .jumbotron
+        h1.display-3 Bottled decorators gem update
+        p.lead v0.1.5 of bottled decorators has been released.
+        hr.my-4
+        p A gem designed to bring decorators back to what they should be, stackable, DRY, and reusable wrapper, aiming to stop the confusion and mix up with View Objects.
+        p.lead
+          .btn-group.btn-group-lg role="group" aria-label="Learn More"
+            = link_to(t('read_more'), project_path(id: 7), class: 'btn btn-primary btn-lg')
+            = link_to(t('visit_repo'), 'https://github.com/John-Hayes-Reed/bottled_decorators', class: 'btn btn-secondary btn-lg')
+            = link_to(t('view_rubygem'), 'https://rubygems.org/gems/bottled_decorators', class: 'btn btn-secondary btn-lg')
+      .jumbotron
+        h1.display-3 New blog post!
+        p.lead A blog post about the concept of class-instance variables
+        hr.my-4
+        p We all know about and regularly use instance variables and class variables, but how about class-level instance variables?
+        p.lead
+          = link_to(t('read_more'), blog_path(id: 3), class: 'btn btn-primary btn-lg')
+      .jumbotron
         h1.display-3 Website Design Update
         p.lead johnhayesreed.com has had a makeover
         hr.my-4
@@ -24,7 +48,7 @@
         p.lead
           = link_to(t('read_more'), blog_path(id: 2), class: 'btn btn-primary btn-lg')
       .jumbotron
-        h1.display-3 bottled_decorators gem release
+        h1.display-3 Bottled decorators gem release
         p.lead The first production version of bottled_decorators has been released (v0.1.4)
         hr.my-4
         p A gem designed to bring decorators back to what they should be, stackable, DRY, and reusable wrapper, aiming to stop the confusion and mix up with View Objects.
@@ -41,7 +65,7 @@
         p.lead
           = link_to(t('read_more'), blog_path(id: 1), class: 'btn btn-primary btn-lg')
       .jumbotron
-        h1.display-3 bottled_services gem release
+        h1.display-3 Bottled services gem release
         p.lead The first production version of bottled_services has been released (v0.1.3)
         hr.my-4
         p A gem designed to make creating and using services as simple and quick as can be, following the single responsibility principle, bottled_services provide Gourmet Service Objects to handle all your business logic as well as keep code clean and DRY.
