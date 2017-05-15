@@ -34,12 +34,13 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 # gem 'capistrano-rails', group: :development
 
 gem 'bottled_decorators', '~> 0.1.5'
+gem 'bottled_observers', '~> 0.1.0'
 gem 'bottled_services', '~> 0.1.3'
 gem 'devise'
-gem 'slim'
 gem 'enumerize'
-gem 'redcarpet'
 gem 'font-awesome-rails'
+gem 'redcarpet'
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
