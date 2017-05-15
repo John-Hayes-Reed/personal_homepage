@@ -8,16 +8,53 @@
       .row
         .col-sm-12
           h1 = @project.title
-      .row
-        .col-sm-4
-          = t('url')
-        .col-sm-8
-          = link_to(@project.url, @project.url)
-      .row
-        .col-sm-4
-          = t('project_type')
-        .col-sm-8
-          = @project.project_type
+        .col-sm-12
+          table.table.table-bordered
+            tbody
+              - if @project.url
+                tr
+                  th = t('url')
+                  td = link_to(@project.url, @project.url)
+              - if @project.project_type
+                tr
+                  th = t('project_type')
+                  td = @project.project_type.text
+              - if @project.server
+                tr
+                  th = t('server')
+                  td = @project.server
+              - if @project.database
+                tr
+                  th = t('database')
+                  td = @project.database
+              - if @project.backend
+                tr
+                  th = t('backend')
+                  td = @project.backend
+              - if @project.frontend
+                tr
+                  th = t('frontend')
+                  td = @project.frontend
+              - if @project.templates
+                tr
+                  th = t('templates')
+                  td = @project.templates
+              - if @project.app
+                tr
+                  th = t('app')
+                  td = @project.app
+              - if @project.version_control
+                tr
+                  th = t('version_control')
+                  td = @project.version_control
+              - if @project.language
+                tr
+                  th = t('language')
+                  td = @project.language
+              - if @project.other
+                tr
+                  th = t('other')
+                  td = @project.other
       .row
         .col-sm-12
           p = @markdown.render(@project.description).html_safe
