@@ -1,13 +1,42 @@
 = form_for [:admin, @project] do |f|
-  .input-field
-    = f.label(:title)
-    = f.text_field(:title)
-  .input-field
-    = f.label(:url)
-    = f.text_field(:url)
-  .input-field
-    = f.select(:project_type, Project.project_type.options)
-  .input-field
-    = f.label(:description)
-    = f.text_area(:description, class: 'materialize-textarea')
-  = f.submit class: 'btn'
+  .row
+    .form-group.col-lg-5.col-md-12
+      = f.label :title
+      = f.text_field :title, class: 'form-control'
+    .form-group.col-lg-5.col-md-8
+      = f.label(:url)
+      = f.text_field :url, class: 'form-control'
+    .form-group.col-lg-2.col-md-4
+      = f.label :project_type
+      = f.select :project_type, Project.project_type.options, {}, class: 'form-group'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :server
+      = f.text_field :server, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :database
+      = f.text_field :database, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :backend
+      = f.text_field :backend, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :frontend
+      = f.text_field :frontend, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :templates
+      = f.text_field :templates, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :app
+      = f.text_field :app, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :version_control
+      = f.text_field :version_control, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :language
+      = f.text_field :language, class: 'form-control'
+    .form-group.col-lg-3.col-md-4.col-sm-6
+      = f.label :other
+      = f.text_field :other, class: 'form-control'
+    .form-group.col-sm-12
+      = f.label :description
+      = f.text_area :description, class: 'form-control', rows: 20
+    = f.submit class: 'btn btn-primary col-sm-12'

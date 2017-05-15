@@ -43,7 +43,19 @@ class Admin::ProjectsController < ApplicationController
 
   def project_params
     {}.tap do |prms|
-      params.require(:project).permit(:title, :project_type, :url, :description).each do |k,v|
+      params.require(:project).permit(:title,
+                                      :project_type,
+                                      :url,
+                                      :server,
+                                      :database,
+                                      :backend,
+                                      :frontend,
+                                      :templates,
+                                      :app,
+                                      :version_control,
+                                      :language,
+                                      :other,
+                                      :description).each do |k,v|
         prms["#{k}".to_sym] = v
       end
     end
