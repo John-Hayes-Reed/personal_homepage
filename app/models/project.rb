@@ -28,8 +28,8 @@ class Project < ApplicationRecord
   def init_technologies
     @technologies ||= {}
     %i[server database backend frontend templates app version_control language other].each do |tech|
-      instance_variable_set :"@#{tech}", technologies[tech.to_s]
-      instance_variable_set :"@#{tech}", nil if technologies[tech.to_s].blank?
+      instance_variable_set :"@#{tech}", @technologies[tech.to_s]
+      instance_variable_set :"@#{tech}", nil if @technologies[tech.to_s].blank?
     end
   end
 
