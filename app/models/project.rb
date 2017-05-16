@@ -26,17 +26,17 @@ class Project < ApplicationRecord
   private
 
   def init_technologies
-    @technologies ||= {}
+    self.technologies ||= {}
     %i[server database backend frontend templates app version_control language other].each do |tech|
-      instance_variable_set :"@#{tech}", @technologies[tech.to_s]
-      instance_variable_set :"@#{tech}", nil if @technologies[tech.to_s].blank?
+      instance_variable_set :"@#{tech}", self.technologies[tech.to_s]
+      instance_variable_set :"@#{tech}", nil if self.technologies[tech.to_s].blank?
     end
   end
 
   def input_technologies
-    @technologies ||= {}
+    self.technologies ||= {}
     %i[server database backend frontend templates app version_control language other].each do |tech|
-      @technologies[:"#{tech}"] = send(:"#{tech}")
+      self.technologies[:"#{tech}"] = send(:"#{tech}")
     end
   end
 end
