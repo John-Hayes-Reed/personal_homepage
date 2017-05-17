@@ -11,7 +11,7 @@
         .col-sm-12
           table.table.table-bordered
             tbody
-              - if @project.url
+              - if @project.url.present?
                 tr
                   th = t('url')
                   td = link_to(@project.url, @project.url)
