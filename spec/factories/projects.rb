@@ -10,6 +10,8 @@ FactoryGirl.define do
                  frontend: 'CSS, SASS',
                  templates: 'SLIM',
                  version_control: 'Git, Github',
+                 app: 'ionic',
+                 language: 'Ruby',
                  other: 'RSpec, Factorygirl'
   end
 end
