@@ -19,8 +19,6 @@ class Project < ApplicationRecord
 
   TECHNOLOGY_ATTRIBUTES.each { |att| send(:attr_accessor, att) }
 
-  before_validation :input_technologies
-
   with_options presence: true do |v|
     v.validates :title
     v.validates :description

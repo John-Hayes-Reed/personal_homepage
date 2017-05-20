@@ -38,7 +38,6 @@ gem 'bottled_observers', '~> 0.1.0'
 gem 'bottled_services', '~> 0.1.3'
 gem 'devise'
 gem 'enumerize'
-gem 'factory_girl'
 gem 'font-awesome-rails'
 gem 'redcarpet'
 gem 'slim'
@@ -47,6 +46,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'rspec-rails'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
 end
 
 group :development do
