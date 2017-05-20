@@ -1,19 +1,23 @@
+# @abstract a model representing Projects of work.
 class Project < ApplicationRecord
+  include BottledObservable
+
   extend Enumerize
   enumerize :project_type, in: %i[web gem app]
   serialize :technologies, JSON
+  TECHNOLOGY_ATTRIBUTES = %i[
+    server
+    database
+    backend
+    frontend
+    templates
+    app
+    version_control
+    language
+    other
+  ].freeze
 
-  attr_accessor :server,
-                :database,
-                :backend,
-                :frontend,
-                :templates,
-                :app,
-                :version_control,
-                :language,
-                :other
-
-  after_initialize :init_technologies
+  TECHNOLOGY_ATTRIBUTES.each { |att| send(:attr_accessor, att) }
 
   before_validation :input_technologies
 
@@ -21,22 +25,5 @@ class Project < ApplicationRecord
     v.validates :title
     v.validates :description
     v.validates :project_type, inclusion: {in: %w[web gem app]}
-  end
-
-  private
-
-  def init_technologies
-    self.technologies ||= {}
-    %i[server database backend frontend templates app version_control language other].each do |tech|
-      instance_variable_set :"@#{tech}", self.technologies[tech.to_s]
-      instance_variable_set :"@#{tech}", nil if self.technologies[tech.to_s].blank?
-    end
-  end
-
-  def input_technologies
-    self.technologies ||= {}
-    %i[server database backend frontend templates app version_control language other].each do |tech|
-      self.technologies[:"#{tech}"] = send(:"#{tech}")
-    end
   end
 end
