@@ -4,12 +4,13 @@ describe PersistRecentActivity, type: :service do
   subject { described_class.call recent_activity: recent_activity, params: params }
 
   context 'with new recent activity' do
+    let!(:parent) { create :project }
     let!(:recent_activity) { BuildRecentActivity.call }
 
     context 'with valid params' do
       let(:params) do
         FilterRecentActivityParams.call(
-          params: ActionController::Parameters.new(recent_activity: attributes_for(:recent_activity))
+          params: ActionController::Parameters.new(recent_activity: attributes_for(:recent_activity).merge(parent_id: parent.id))
         )
       end
 

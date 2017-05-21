@@ -14,7 +14,7 @@ class FilterRecentActivityParams < BottledService
   private
 
   def allowed_params
-    %i[title comment parent parent_id parent_type]
+    %i[title comment parent_id]
   end
 
 end

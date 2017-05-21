@@ -80,7 +80,7 @@ describe Admin::BlogsController, type: :controller do
       expect(response).to have_http_status 302
     end
 
-    it 'successfully saves a new project' do
+    it 'successfully saves a new blog' do
       post :create, params: { blog: attributes_for(:blog) }
       expect(assigns(:blog)).to be_persisted
     end
@@ -105,7 +105,7 @@ describe Admin::BlogsController, type: :controller do
       expect(response).to have_http_status 302
     end
 
-    it 'successfully updates the correct project' do
+    it 'successfully updates the correct blog' do
       put :update, params: { id: blog1.id,
                              blog: attributes_for(:blog)
                                    .merge(title: 'new title', id: blog1.id) }
@@ -128,10 +128,10 @@ describe Admin::BlogsController, type: :controller do
       expect(response).to have_http_status 302
     end
 
-    it 'successfully destroys the correct project' do
+    it 'successfully destroys the correct blog' do
       delete :destroy, params: { id: blog1.id }
       expect(assigns(:blog)).to be_destroyed
-      expect { Project.find(blog1.id) }
+      expect { Blog.find(blog1.id) }
         .to raise_error ActiveRecord::RecordNotFound
     end
   end
