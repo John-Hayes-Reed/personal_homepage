@@ -1,7 +1,7 @@
 .container
   h1 = t('recent_activities')
-  = link_to(t('new_recent_activity'), new_admin_recent_activity_path, class: 'btn')
-  table
+  = link_to(t('new_recent_activity'), new_admin_recent_activity_path, class: 'btn btn-primary')
+  table.table
     thead
       tr
         th = t('activerecord.attributes.recent_activity.title')

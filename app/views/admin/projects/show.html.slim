@@ -1,8 +1,10 @@
 .container
   h1 = t('project')
-  = link_to(t('back'), admin_projects_path, class: 'btn')
-  = link_to(edit_admin_project_path(@project), class: 'btn') do
-    i.fa.fa-lg.fa-pencil
+  .btn-group
+    = link_to(admin_projects_path, class: 'btn btn-secondary') do
+      i.fa.fa-lg.fa-arrow-left
+    = link_to(edit_admin_project_path(@project), class: 'btn btn-primary') do
+      i.fa.fa-lg.fa-pencil
   br
   br
   .row
