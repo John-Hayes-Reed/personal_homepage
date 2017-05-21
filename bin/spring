@@ -4,7 +4,6 @@
 # It gets overwritten when you run the `spring binstub` command.
 
 unless defined?(Spring)
-  require 'rubygems'
   require 'bundler'
 
   lockfile = Bundler::LockfileParser.new(Bundler.default_lockfile.read)

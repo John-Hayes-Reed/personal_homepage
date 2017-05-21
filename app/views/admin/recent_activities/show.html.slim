@@ -1,0 +1,22 @@
+.container
+  h1 = t('recent_activity')
+  = link_to(t('back'), admin_recent_activities_path, class: 'btn')
+  = link_to(edit_admin_recent_activity_path(@recent_activity), class: 'btn')
+    i.fa.fa-lg.fa-pencil
+  br
+  br
+  .row
+    .col-lg-2.col-sm-12 = t('activerecord.attributes.recent_activity.title')
+    .col-lg-10.col-sm-12 = @recent_activity.title
+  .row
+    .col-lg-2.col-sm-12 = t('activerecord.attributes.recent_activity.comment')
+    .col-lg-10.col-sm-12 = @recent_activity.comment
+  .row
+    .col-lg-2.col-sm-12 = t('activerecord.attributes.recent_activity.parent')
+    .col-lg-10.col-sm-12 = @recent_activity.parent&.title
+  .row
+    .col-lg-2.col-sm-12 = t('activerecord.attributes.recent_activity.created_at')
+    .col-lg-10.col-sm-12 = @recent_activity.created_at
+  .row
+    .col-lg-2.col-sm-12 = t('activerecord.attributes.recent_activity.updated_at')
+    .col-lg-10.col-sm-12 = @recent_activity.updated_at
