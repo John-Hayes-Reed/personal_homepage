@@ -2,7 +2,7 @@
 #   the webpage.
 class RecentActivity < ApplicationRecord
   serialize :urls, JSON
-  belongs_to :parent, polymorphic: true
+  belongs_to :parent, polymorphic: true, optional: true
 
   with_options presence: true do |v|
     v.validates :title, length: { maximum: 20 }
