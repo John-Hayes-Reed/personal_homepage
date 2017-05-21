@@ -1,3 +1,6 @@
+require 'net/http'
+require 'JSON'
+# @abstract An api object for interacting with the rubygems public API.
 class RubygemsApi
   OWNER_HANDLE = :john_hayes_reed
 

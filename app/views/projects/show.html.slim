@@ -19,7 +19,7 @@
                 tr
                   th = t('project_type')
                   td = @project.project_type.text
-              - if @project.server
+              - if @project.server.present?
                 tr
                   th = t('server')
                   td = @project.server
