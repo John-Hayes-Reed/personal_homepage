@@ -5,10 +5,8 @@ class FilterProjectParams < BottledService
 
   # Executes the Service Object.
   #
-  # @raise [ActionController::ParameterNotFound] if the required key is not
+  # @raise [ActionController::ParameterMissing] if the required key is not
   #   present.
-  # @raise [ActionController::UnpermittedParameter] if a parameter not in the
-  #   whitelist is present.
   #
   # @return [ActionController::Parameters]
   def call
