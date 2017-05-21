@@ -13,5 +13,4 @@ class BuildBlog < BottledService
 
     blog
   end
-
 end
