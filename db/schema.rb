@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170515131539) do
+ActiveRecord::Schema.define(version: 20170521025418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 20170515131539) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.text     "technologies"
+  end
+
+  create_table "recent_activities", force: :cascade do |t|
+    t.string   "title"
+    t.string   "comment"
+    t.json     "urls"
+    t.string   "parent_type"
+    t.integer  "parent_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["parent_type", "parent_id"], name: "index_recent_activities_on_parent_type_and_parent_id", using: :btree
   end
 
 end

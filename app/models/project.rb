@@ -16,8 +16,9 @@ class Project < ApplicationRecord
     language
     other
   ].freeze
-
   TECHNOLOGY_ATTRIBUTES.each { |att| send(:attr_accessor, att) }
+
+  has_many :recent_activities, as: :parent
 
   with_options presence: true do |v|
     v.validates :title
