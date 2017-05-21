@@ -10,4 +10,5 @@ nav.navbar.navbar-toggleable-md.navbar-inverse.bg-primary
         - if admin_signed_in?
           li.nav-item = link_to(t('admin_blogs'), admin_blogs_path, class: 'nav-link')
           li.nav-item = link_to(t('admin_projects'), admin_projects_path, class: 'nav-link')
+          li.nav-item = link_to(t('admin_recent_activities'), admin_recent_activities_path, class: 'nav-link')
           li.nav-item = link_to(t('sign_out'), destroy_admin_session_path, method: :delete, class: 'nav-link')

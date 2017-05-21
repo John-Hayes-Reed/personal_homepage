@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @gems = RubygemsApi.call :all
   end
 
   def show
