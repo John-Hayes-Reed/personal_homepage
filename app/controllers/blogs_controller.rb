@@ -1,19 +1,27 @@
 class BlogsController < ApplicationController
 
   def index
-    @blogs = Blog.all
+    find_blogs
   end
 
   def show
     find_blog
-    @markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, fenced_code_blocks: true)
-  rescue ActiveRecord::RecordNotFound => e
-    redirect_to blogs_path, alert: t('blog_not_found')
+    initialize_markdown_renderer
   end
 
   private
 
+  def find_blogs
+    @blogs = Blog.all
+  end
+
   def find_blog
-    @blog = Blog.find(params[:id])
+    @blog = InitializeBlog.call id: params[:id]
+  end
+
+  def initialize_markdown_renderer
+    @markdown = Redcarpet::Markdown.new Redcarpet::Render::HTML,
+                                        autolink: true,
+                                        fenced_code_blocks: true
   end
 end
