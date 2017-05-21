@@ -102,7 +102,7 @@ describe Admin::ProjectsController, type: :controller do
       expect(Project.find(project1.id).title).to eq 'new title'
     end
 
-    it 'rerenders on save error'do
+    it 'rerenders on save error' do
       put :update, params: { id: project1.id, project: attributes_for(:project).merge(title: nil, id: project1.id) }
       expect(response).to render_template 'edit'
     end
