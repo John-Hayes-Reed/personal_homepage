@@ -1,6 +1,10 @@
 .container
   h1 = t('edit_blog')
-  = link_to(t('back'), blog_path(@blog), class: 'btn')
+  .btn-group
+    = link_to(admin_blog_path(@blog), class: 'btn btn-secondary') do
+      i.fa.fa-lg.fa-arrow-left
+    = link_to(admin_blog_path(@blog), method: :delete, class: 'btn btn-danger') do
+      i.fa.fa-lg.fa-trash
   br
-	br
+  br
   = render 'form'

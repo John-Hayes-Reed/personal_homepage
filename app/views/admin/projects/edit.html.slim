@@ -1,3 +1,8 @@
 .container
   h1 = t('new_project')
+  .btn-group
+    = link_to(admin_projects_path, class: 'btn btn-secondary') do
+      i.fa.fa-lg.fa-arrow-left
+    = link_to(admin_project_path(@project), method: :delete, class: 'btn btn-danger') do
+      i.fa.fa-lg.fa-trash
   = render 'form'

@@ -1,8 +1,10 @@
 = form_for [:admin, @blog] do |f|
-  .input-field
-    = f.label(:title)
-    = f.text_field(:title)
-  .input-field
-    = f.label(:body)
-    = f.text_area(:body, class: 'materialize-textarea')
-  = f.submit class: 'btn'
+  .row
+    .form-group.col-sm-12
+      = f.label(:title)
+      = f.text_field(:title, class: 'form-control')
+    .form-group.col-sm-12
+      = f.label(:body)
+      = f.text_area(:body, class: 'form-control', rows: 20)
+  .row.justify-content-end
+    = f.submit class: 'btn btn-success col-xs-3'
