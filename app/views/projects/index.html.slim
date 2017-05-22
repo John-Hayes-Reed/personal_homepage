@@ -10,7 +10,9 @@
         - @projects.web_systems.each do |project|
           = link_to(project.title, project_path(project), class: 'list-group-item list-group-item-action')
       br
-      h3 = t('open_source_gems')
+      h3
+        = t('open_source_gems')
+      small.text-muted.align-top Gem list and information retrieved from rubygems.org public API
       ul.list-group
         - @gems.each do |gem|
           = link_to(gem['homepage_uri'], class: 'list-group-item list-group-item-action') do
