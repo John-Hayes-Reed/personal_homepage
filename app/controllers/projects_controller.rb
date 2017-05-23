@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   def index
     find_projects
     find_gems
+    find_repositories
   end
 
   # GET /projects/1
@@ -29,6 +30,16 @@ class ProjectsController < ApplicationController
   # @return [void]
   def find_gems
     @gems = RubygemsApi.call :all
+  end
+
+  # Find a list of repositories owned by John Hayes-Reed using the GithubApi
+  #   class.
+  #
+  # @note the contents of @repos instance variable are in JSON format.
+  #
+  # @return [void]
+  def find_repositories
+    @repos = GithubApi.call :repos
   end
 
   # Finds a single instance of Project from the database using an ID.

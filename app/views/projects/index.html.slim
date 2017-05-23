@@ -10,8 +10,12 @@
         - @projects.web_systems.each do |project|
           = link_to(project.title, project_path(project), class: 'list-group-item list-group-item-action')
       br
-      h3
-        = t('open_source_gems')
+      h3 = t('mobile_applications')
+      ul.list-group
+        - @projects.mobile_apps.each do |project|
+          = link_to(project.title, project_path(project), class: 'list-group-item list-group-item-action')
+      br
+      h3 = t('open_source_gems')
       small.text-muted.align-top Gem list and information retrieved from rubygems.org public API
       ul.list-group
         - @gems.each do |gem|
@@ -24,10 +28,21 @@
             small.mb-1
               = gem['info']
       br
-      h3 = t('mobile_applications')
+      h3 = t('public_repositories')
+      small.text-muted.align-top Repository list and information retrieved from api.github.com public API
       ul.list-group
-        - @projects.mobile_apps.each do |project|
-          = link_to(project.title, project_path(project), class: 'list-group-item list-group-item-action')
+        - @repos.each do |repo|
+          = link_to(repo['html_url'], class: 'list-group-item list-group-item-action') do
+            .d-flex.w-100.justify-content-between
+              h5 = repo['name']
+              small
+                |Language:&nbsp;
+                = repo['language']
+                br
+                |Created:&nbsp;
+                = repo['created_at'].to_date
+            small.mb-1
+              = repo['description']
     .col-sm-3
       = render 'shared/contact_bar'
       = render 'shared/recent_activities'
