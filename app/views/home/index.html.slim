@@ -1,13 +1,13 @@
 .container
   .row
-    .col-sm-9
+    .col-lg-9.col-md-12
       .row.mt-2
-        .col-sm-9
+        .col-md-9.col-sm-12
           h1.mt-2 Welcome!
           h3 A bit about me
           p In case you hadn't already guessed, my name is John Hayes-Reed. I am a driven, focused, and innovative software engineer who is always trying to learn more, study new languages and technologies, and thrives in a challenging environment.
           p As a university graduate with a strong education in core computer science principles and 3+ years experience in software engineering, I am always looking to push my knowledge and understanding further in all fields of computer science and software development. Having studied and worked in Japan for over 4 years, I am also fluent in the Japanese language and have confidence in my ability to communicate with my team and others around me whether it is in English or Japanese alike.
-        .col-sm-3.d-flex.align-items-center
+        .col-md-3.col-sm-12.d-flex.align-items-center.justify-content-center
           = image_tag 'profile_picture.png', class: 'rounded-circle home-image', size: '150x180'
       h3.mt-4 Background
       p I have worked as a software engineer for over 3 years in Japan focusing predominantly on web technologies. I have worked on a varied list of projects ranging from legacy ASP systems with VBScript, to modern web systems with Ruby on Rails, real-time communication, and API's. Whilst my current specialities lie with the Ruby language and development in Rails, I have worked with a long list of languages during my university years, as well as in my own time for study or personal projects. I feel very confident in taking on any challenge in any language, and will complete the task at hand.
@@ -38,24 +38,32 @@
         li Limits Of Computation
         li Web 3D Apps
 
-      p I also studied Phsyics, Mathematics with Mechanics, Music Technology, and Music during my college years, as well as studying the Japanese language in Kyoto Japan for a year and a half before enrolling in University.
+      p I also studied Phsyics, Mathematics with Mechanics, Music Technology, and Music during my college years, as well as studying at a high school in Kyoto Japan for a year and a half before enrolling in University.
 
       h3.mt-2 FAQ
       h5.faq-question What is your favorite language?
-      .faq-answer.mb-3 That is easy, Ruby.
+      .faq-answer.mb-4 That is easy, Ruby.
       h5.faq-question Why?
-      .faq-answer.mb-3 Anyone who has used Ruby doesn't need to ask this question. It's freedom, expressivess, natural feel, and of course, the meta. After a while Ruby stops becoming just a language and starts to become a companion, a way of thinking, and a lifestyle.
+      .faq-answer.mb-4 Anyone who has used Ruby doesn't need to ask this question. It's freedom, expressivess, natural feel, and of course, the meta. After a while Ruby stops becoming just a language and starts to become a companion, a way of thinking, and a lifestyle.
       h5.faq-question What is your favourite Method?
-      .faq-answer.mb-3 method_missing, no contest.
+      .faq-answer.mb-4 method_missing, no contest.
       h5.faq-question How did you learn to speak Japanese?
-      .faq-answer.mb-3 Through necessity, instead of going to a language school and slowly learning at my own pace, I decided to throw myself into the lion's den where I had no choice other than to learn it. I like to apply this learning method to many skills I learn, whether in work or private, if a skill or technique is required of me to complete a task I will get stuck in at full charge to learn what is needed at a rapid pace.
+      .faq-answer.mb-4 Through necessity, instead of going to a language school and slowly learning at my own pace, I decided to throw myself into the lion's den where I had no choice other than to learn it. I like to apply this learning method to many skills I learn, whether in work or private, if a skill or technique is required of me to complete a task I will get stuck in at full charge to learn what is needed at a rapid pace.
       h5.faq-question What are your goals for the future?
-      .faq-answer.mb-3 To be a part of a team that delivers quality, cutting edge systems using best practices and not afraid to try out new technologies. To create systems and work in projects that make a difference to people's / businesses' lives, that I can be proud to have been a part of.
+      .faq-answer.mb-4 To be a part of a team that delivers quality, cutting edge systems using best practices and not afraid to try out new technologies. To create systems and work in projects that make a difference to people's / businesses' lives, that I can be proud to have been a part of.
+      h5.faq-question What are your hobbies / interests outside of work life?
+      .faq-answer.mb-4 Learning. I love to find out about new technologies and techniques and give them a try, as well as keeping up to date with some of my other interests outside of computer science such as phsycics. I also of course love to spend time and play with my amazing daughter Skye, wife Mami, and our three doggies Coffee, Tea, and Frappuccino.
+      h5.faq-question What is your work ethic?
+      .faq-answer.mb-1 I am never afraid to get stuck in or afraid of failure, my first thought in any task in work is that nothing is too great or difficult that it cannot be completed without perserverance. I recently stumbled upon a quote which I think reflects my approach to work and study quite well:
+      br
+      .faq-quote.text-muted Don't wish it was easier, wish you were better. Don't wish for less problems, wish for more skills. Don't wish for less challenges, wish for more wisdom.
+      strong.mb-4
+        |- Jim Rohn
 
 
 
 
 
-    .col-sm-3.mt-2
+    .col-lg-3.col-md-12.mt-2
       = render 'shared/contact_bar'
       = render 'shared/recent_activities'
