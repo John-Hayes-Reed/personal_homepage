@@ -11,6 +11,9 @@ class RubygemsApi
     JSON.parse(response)
   end
 
+  # Gets the general information of all gems from a particular owner.
+  #
+  # @return [JSON]
   def self.all
     "/api/v1/owners/#{OWNER_HANDLE}/gems.json"
   end
