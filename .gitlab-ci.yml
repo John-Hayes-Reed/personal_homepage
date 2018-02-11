@@ -1,0 +1,47 @@
+image: "ruby:2.4.1"
+
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: personal_homepage_test
+
+cache:
+  paths:
+    - vendor/ruby
+
+before_script:
+  - ruby -v                                   # Print out ruby version for debugging
+  - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
+  - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+
+stages:
+  - review
+  - test
+  - deploy
+
+rubocop:
+  stage: review
+  script:
+    - rubocop
+
+rails-spec:
+  stage: test
+  environment: test
+  variables:
+    DATABASE_URL: postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB
+  script:
+    - bundle install
+    - bundle exec rake db:migrate
+    - bundle exec rake db:seed
+    - bundle exec rspec spec
+
+deploy:
+  stage: deploy
+  only: 
+    - master
+  type: deploy
+  environment: production
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
