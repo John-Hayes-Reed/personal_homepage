@@ -1,4 +1,4 @@
-image: "ruby:2.4.1"
+image: "ruby:2.5.0"
 
 services:
   - postgres:latest
@@ -11,6 +11,8 @@ cache:
     - vendor/ruby
 
 before_script:
+  - apt-get update -qy
+  - apt-get install -y nodejs
   - ruby -v                                   # Print out ruby version for debugging
   - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
   - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
@@ -32,13 +34,23 @@ rails-spec:
     DATABASE_URL: postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB
   script:
     - bundle install
-    - bundle exec rake db:migrate
-    - bundle exec rake db:seed
+    - bundle exec rake db:migrate RAILS_ENV=test
+    - bundle exec rake db:seed RAILS_ENV=test
     - bundle exec rspec spec
 
-deploy:
+deploy-staging:
   stage: deploy
-  only: 
+  only:
+    - develop
+  type: deploy
+  environment: staging
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+
+deploy-production:
+  stage: deploy
+  only:
     - master
   type: deploy
   environment: production
