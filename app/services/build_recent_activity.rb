@@ -1,6 +1,5 @@
 # @abstract a Service Object to build new RecentActivity instances.
 class BuildRecentActivity < BottledService
-
   att :parent
 
   def call
@@ -10,5 +9,4 @@ class BuildRecentActivity < BottledService
       RecentActivity.new
     end
   end
-
 end

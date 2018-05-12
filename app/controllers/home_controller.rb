@@ -1,4 +1,4 @@
+# Controller for Home pages.
 class HomeController < ApplicationController
-  def index
-  end
+  def index; end
 end

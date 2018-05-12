@@ -18,5 +18,4 @@ class PersistBlog < BottledService
     @blog.publish
     true
   end
-
 end

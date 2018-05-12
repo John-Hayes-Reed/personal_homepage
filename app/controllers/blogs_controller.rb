@@ -1,5 +1,5 @@
+# Controller for blogs pages.
 class BlogsController < ApplicationController
-
   def index
     find_blogs
   end

@@ -1,7 +1,6 @@
 # @abstract a Service Object to prepare the parameters for mass assignment to
 #   recent activity models.
 class FilterRecentActivityParams < BottledService
-
   att :params
 
   # Executes the Service Object.
@@ -16,5 +15,4 @@ class FilterRecentActivityParams < BottledService
   def allowed_params
     %i[title comment parent_id]
   end
-
 end

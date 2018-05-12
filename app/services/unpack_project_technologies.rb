@@ -1,7 +1,6 @@
 # @abstract Service Object for opening up a project models serialized
 #   technologies attributes and setting seperate instance variables.
 class UnpackProjectTechnologies < BottledService
-
   att :project, Project
 
   # Executes the Service Object logic and initializes technology fields for an

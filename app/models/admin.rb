@@ -1,3 +1,4 @@
+# Class to represent an administrator of the application.
 class Admin < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

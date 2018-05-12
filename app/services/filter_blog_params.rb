@@ -21,5 +21,4 @@ class FilterBlogParams < BottledService
   def allowed_params
     %i[title body]
   end
-
 end

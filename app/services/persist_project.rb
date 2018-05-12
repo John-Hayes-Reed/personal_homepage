@@ -1,7 +1,6 @@
 # @abstract a Service Object for persisting instances of Product
 #   to the database.
 class PersistProject < BottledService
-
   att :project, Project
   att :params
 
