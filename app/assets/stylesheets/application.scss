@@ -18,6 +18,11 @@
  @import 'blogs';
  @import 'projects';
 
+.navbar, .breadcrumb {
+  .container {
+    margin-bottom: 0;
+  }
+}
 
 body {
   font-family: 'Roboto Mono', monospace;

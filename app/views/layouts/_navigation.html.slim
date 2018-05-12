@@ -1,8 +1,8 @@
-nav.navbar.navbar-toggleable-md.navbar-inverse.bg-primary
-  button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle Navigation"
-    span.navbar-toggler-icon
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
   .container
     = link_to(t('site_title'), root_path, class: 'navbar-brand')
+    button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
     #navbarNavDropdown.collapse.navbar-collapse
       ul.navbar-nav
         li.nav-item = link_to(t('projects'), projects_path, class: 'nav-link')
