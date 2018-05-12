@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::BlogsController, type: :controller do
-  let!(:admin) { create :admin }
+  let!(:admin) { find_or_create_admin }
   let!(:blog1) { create :blog }
   let!(:blog2) { create :blog }
   before { sign_in admin }

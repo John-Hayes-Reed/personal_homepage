@@ -1,7 +1,6 @@
 # @abstract Service Object for taking a Project instances seperate technology
 #   attributes and packing them into the serialized technologies column.
 class PackProjectTechnologies < BottledService
-
   att :project, Project
 
   # Executes the Service Object's logic and sets a Projects instances

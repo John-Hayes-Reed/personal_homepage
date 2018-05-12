@@ -1,6 +1,5 @@
 # @abstract the front controller for handling requests involved with projects.
 class ProjectsController < ApplicationController
-
   # GET /projects
   def index
     find_projects

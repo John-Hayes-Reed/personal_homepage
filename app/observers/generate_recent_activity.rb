@@ -1,3 +1,4 @@
+# Observer class for creating RecentActivity records.
 class GenerateRecentActivity
   include BottledObserver
 
@@ -5,11 +6,11 @@ class GenerateRecentActivity
     return unless @subscription&.is_a?(Project) || @subscription&.is_a?(Blog)
     recent_activity = BuildRecentActivity.call parent: @subscription
     params = {
-        title: define_title,
-        comment: define_comment
+      title: define_title,
+      comment: define_comment
     }
     PersistRecentActivity.call recent_activity: recent_activity,
-                                     params: params
+                               params: params
   end
 
   private

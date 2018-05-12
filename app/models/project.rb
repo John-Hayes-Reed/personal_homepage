@@ -3,7 +3,7 @@ class Project < ApplicationRecord
   include BottledObservable
 
   extend Enumerize
-  enumerize :project_type, in: %i[web gem app] # @todo remove gem from this list.
+  enumerize :project_type, in: %i[web gem app]
   serialize :technologies, JSON
   TECHNOLOGY_ATTRIBUTES = %i[
     server
@@ -23,7 +23,7 @@ class Project < ApplicationRecord
   with_options presence: true do |v|
     v.validates :title
     v.validates :description
-    v.validates :project_type, inclusion: {in: %w[web gem app]}
+    v.validates :project_type, inclusion: { in: %w[web gem app] }
   end
 
   scope :web_systems, (-> { where(project_type: 'web') })

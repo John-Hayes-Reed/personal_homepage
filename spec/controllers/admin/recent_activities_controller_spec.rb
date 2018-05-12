@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::RecentActivitiesController, type: :controller do
-  let!(:admin) { create :admin }
+  let!(:admin) { find_or_create_admin }
   let!(:recent_activity1) { create :recent_activity }
   let!(:recent_activity2) { create :recent_activity }
   before { sign_in admin }

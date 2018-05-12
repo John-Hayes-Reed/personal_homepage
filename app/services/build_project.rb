@@ -1,7 +1,6 @@
 # A Service Object for initializing and preparing a new instance of the Project
 # model.
 class BuildProject < BottledService
-
   # Executes the Service Object logic, Builds a new instance of Project and
   #   then adds the required observers.
   #
@@ -13,5 +12,4 @@ class BuildProject < BottledService
 
     project
   end
-
 end

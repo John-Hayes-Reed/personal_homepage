@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Admin::ProjectsController, type: :controller do
-  let!(:admin) { create :admin }
+  let!(:admin) { find_or_create_admin }
   let!(:project1) { create :project }
   let!(:project2) { create :project }
   before { sign_in admin }

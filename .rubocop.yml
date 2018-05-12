@@ -1,0 +1,19 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'test/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'vendor/**/*'
+    - 'lib/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - Gemfile
+    - Rakefile
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
