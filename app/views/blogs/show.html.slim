@@ -8,5 +8,6 @@
       h1 = @blog.title
       = @markdown.render(@blog.body).html_safe
     .col-lg-3.col-md-12.mt-2
+      = render 'shared/profile_image'
       = render 'shared/contact_bar'
       = render 'shared/recent_activities'

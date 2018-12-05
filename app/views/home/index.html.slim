@@ -1,69 +1,216 @@
 .container
   .row
-    .col-lg-9.col-md-12
-      .row.mt-2
-        .col-md-9.col-sm-12
-          h1.mt-2 Welcome!
-          h3 A bit about me
-          p In case you hadn't already guessed, my name is John Hayes-Reed. I am a driven, focused, and innovative software engineer who is always trying to learn more, study new languages and technologies, and thrives in a challenging environment.
-          p As a university graduate with a strong education in core computer science principles and 3+ years experience in software engineering, I am always looking to push my knowledge and understanding further in all fields of computer science and software development. Having studied and worked in Japan for over 4 years, I am also fluent in the Japanese language and have confidence in my ability to communicate with my team and others around me whether it is in English or Japanese alike.
-        .col-md-3.col-sm-12.d-flex.align-items-center.justify-content-center
-          = image_tag 'profile_picture.png', class: 'rounded-circle home-image', size: '150x180'
-      h3.mt-4 Background
-      p I have worked as a software engineer for over 3 years in Japan focusing predominantly on web technologies. I have worked on a varied list of projects ranging from legacy ASP systems with VBScript, to modern web systems with Ruby on Rails, real-time communication, and API's. Whilst my current specialities lie with the Ruby language and development in Rails, I have worked with a long list of languages during my university years, as well as in my own time for study or personal projects. I feel very confident in taking on any challenge in any language, and will complete the task at hand.
-      p I have recently started to try to take more interest in the wider programming community and become a positive active member through platforms such as Stack Overflow, answering questions and offering help where I can, as well as writing technological blogs, and taking part in hackathons.
+    .col-12
+      .d-flex.justify-content-center.mt-5.mb-5.pt-5
+        .intro-code
+          span.constant
+            |@john
+          span
+            |&nbsp;
+            |||=
+            |&nbsp;
+          span.constant
+            |Human
+          span.method .new
+          span
+            |(
+          div
+            |&nbsp;&nbsp;
+            span.symbol name:
+            span.string
+              |&nbsp;
+              |'John Stephen Hayes-Reed'
+            span
+              |,
+          div
+            |&nbsp;&nbsp;
+            span.symbol email_address:
+            span.string
+              |&nbsp;
+              |'john.hayes.reed@gmail.com'
+            span
+              |,
+          div
+            |&nbsp;&nbsp;
+            span.symbol current_role:
+            span.string
+              |&nbsp;
+              |'Technical Design Authority'
+            span
+              |,
+          div
+            |&nbsp;&nbsp;
+            span.symbol previous_roles:
+            span &nbsp;[
+          div
+            |&nbsp;&nbsp;&nbsp;&nbsp;
+            span.string 'Senior Ruby Developer'
+            span
+              |,
+            div
+              |&nbsp;&nbsp;&nbsp;&nbsp;
+              span.string 'Software Engineer'
+              span
+                |,
+            div
+              |&nbsp;&nbsp;&nbsp;&nbsp;
+              span.string 'Technical Lead'
+            div
+              |&nbsp;&nbsp;
+              |],
+          div
+            |&nbsp;&nbsp;
+            span.symbol sns_links:
+            span &nbsp;
+            span 
+              |[
+            span.string
+              = link_to('https://www.linkedin.com/in/john-hayes-reed-986008172/') do
+                |'LinkedIn'
+            span
+              |,&nbsp;
+            span.string
+              = link_to('https://twitter.com/johnny_rubeard') do
+                |'Twitter'
+            span
+              |]
+          div
+            |&nbsp;&nbsp;
+            span.symbol contributions:
+            span &nbsp;
+            span
+              |[
+            span.string
+              = link_to('https://github.com/John-Hayes-Reed') do
+                |'Github'
+            span
+              |,&nbsp;
+            span.string
+              = link_to('http://stackoverflow.com/users/4497621/john-hayes-reed') do
+                |'Stack Overflow'
+            span
+              |]
+          div
+            |)
+          br
+          div
+            span.constant @john
+            span.method
+              a href="#biography" data-toggle="collapse" aria-expanded="false" aria-controls="biography"
+                |.view_biography
+          div
+            span.constant @john
+            span.method
+              = link_to projects_path do
+                |.view_projects
+          div
+            span.constant @john
+            span.method
+              = link_to blogs_path do
+                |.view_blog
+  #biography.collapse
+    .row
+      .col-lg-9.col-12
+        h2 Biography
+        h3 A bit about me
+        p In case you hadn't already guessed, my name is John Hayes-Reed. I am a driven, focused, and innovative software engineer who is always trying to learn more, pick up new technologies, and thrives in a challenging environment.
+        p As a university graduate with a strong education in core computer science principles and software engineering, I am always looking to push my knowledge and understanding further in all fields of computer science and software development. Having studied and worked in Japan for over 4 years, I am also fluent in the Japanese language and have confidence in my ability to communicate with my team and others around me in both English and Japanese alike.
+        h3.mt-4 Background
+        p I have worked as a software engineer focusing predominantly on Ruby and web-based technologies for all of my career. I have worked on a varied list of projects ranging from legacy ASP systems with VBScript, to modern web systems with Ruby on Rails, real-time communication, and API's. Whilst my current specialities lie with the Ruby language and development in Rails, I have worked with a long list of languages during my university years, as well as in my own time for study or personal projects. I feel very confident in taking on any challenge in any language, and will complete the task at hand.
+        p I try to take an interest in the wider programming community and become a positive active member through platforms such as Rubyflow Stack Overflow - answering questions and offering help where I can, as well as writing technological blogs, and taking part in hackathons.
 
-      h3.mt-2 Education
-      p I studied GAME (Games And Multimedia Environments) at the University of Sussex School of Informatics, which is a computer science based degree that also leans into areas of games development and multimedia. Having had the privilege of learning from some inspirational and engaging mentors, I have had the opportunity to study in many areas of both computer science and games and multimedia including:
-      ul.education-list
-        li Introduction Computer systems
-        li Introduction to multimedia
-        li Introduction to Programming
-        li Programming Concepts
-        li Further Programming
-        li Human Systems
-        li Models of Computing
-        li Program Design
-        li 3D Modelling and Rendering
-        li 3D Animation
-        li Compilers
-        li Machine Learning
-        li Program Analysis
-        li Natural Language Engineering
-        li Operating Systems
-        li Software Engineering
-        li Human Computer Interaction
-        li Web Computing
-        li Video Production Techniques
-        li Limits Of Computation
-        li Web 3D Apps
+        h3.mt-2 History
+        h4 
+          |Northgate Public Services&nbsp;
+          small.text-muted 2017 - present
+        h5 Technical Design Authority
+        p My current role, working as an Architect helping design the technical solutions to the business problems, creating both High Level Design documents and Low Level Design documents to communicate the approach and implementation to multiple Scrum teams. Acting as the 'glue' to bring multiple technical teams working on different areas and technologies within the project together to facilitate and drive the design, testing, implementation, and delivery of end to end functionality for features. Analysing work practices and identifying weak spots / areas of improvement, and adjusting / creating ways of working to help increase productivity and quality. Mentoring Junior members in both general development and the project specific areas, chairing technical meetings to help spread knowledge of particular techniques, technologies, and implementations.
+        h5 Senior Ruby Developer
+        p My initial primary role was to create the low level design for features and implement them alongside team mates in my scrum team to deliver a feature end to end. As well as that it was my responsibility mentor junior members through remote pair programming sessions, code reviews, and group knowledge sharing sessions. During this period I was also asked to take on the roles of a Feature Lead (leading a scrum / feature team), and then a Technical Lead (leading all scrum teams and working with high level architects to help drive the Low Level Designs and implementation from their High Level Designs and spread that knowledge amongst teams as well as assign the work to teams), which eventually led to my more formal promotion to Technical Design Authority.
+        h6 Technologies & skills
+        p Ruby, Rails, Couchbase, Docker, Make, Rspec, Gherkin, Cucumber, SOAP, REST, JSON, XML, Postgresql, Ubuntu, UML, Lucidchart, Git, Github.
+        h4.mt-2
+          |株式会社楓 フォン (Feng  co.,ltd.)&nbsp;
+          small.text-muted 2015 - 2017
+        h5 Software Engineer
+        p Going directly to clients and working with them to advise, design, and develop web / cloud based solutions for their business.  
+        ul
+          li Maintaining legacy systems.  
+          li Designing and developing new features for legacy systems.
+          li Teaching teams about technologies and design patterns to improve their work-cycle and rollout speed for new features and updates to modern systems.  
+          li Working with clients’ dev teams to manage, build, and release a new web-system.
+        h6 Technologies & skills
+        p Ruby, Rails, RSpec, Capistrano, Git, Gitlab, jquery, Sass, Legacy asp, CentOS, Vmware, C#, Sidekiq.
+        h4.mt-2
+          |株式会社セブンエージェント (Seven  Agent)&nbsp;
+          small.text-muted 2014 - 2015
+        h5 Software Engineer
+        p Designing and developing web-systems and mobile applications for business solutions. Analysing current projects and resources and managing projects development.
+        ul
+          li Developing web-systems and mobile applications.
+          li Meeting with clients to listen to their problems / ideas, and design and develop software solutions to meet their needs.
+          li Work with and manage a small dev team working on various projects simultaneously.
+          li Think of, research for, and implement new business projects.
+        h6 Technologies & skills
+        p Ruby, Rails, RSpec, jquery, AngularJS, Underscore.js, Ionic, Google dev tools (for android), Apple dev tools (for ios), Capistrano, Git, Gitlab, Bootstrap.
+        h4.mt-2
+          |Freelance web developer&nbsp;
+          small.text-muted 2013 - 2014
+        p Whilst working officially as an English Instructor in Japan, I was also in pursuit of developing small scale sites for people with the goal of eventually trying to build that up into my own company. Made my first move into Ruby on Rails as my tool of choice to create some small scale CMS / blog based sites, for bands / friends.
+        h6 Technologies & Skills
+        p Ruby, Rails, Bootstrap, Git, Github.
+        h4.mt-2
+          |NOVA Japan&nbsp;
+          small.text-muted 2013 - 2014
+        p Teaching a wide skill range of students wanting to learn English as a foreign language, including children from 3+ to advanced and business oriented learners.
 
-      p I also studied Phsyics, Mathematics with Mechanics, Music Technology, and Music during my college years, as well as studying at a high school in Kyoto Japan for a year and a half before enrolling in University.
+        h3.mt-2 Education
+        p I studied GAME (Games And Multimedia Environments) at the University of Sussex School of Informatics, which is a computer science based degree that also leans into areas of games development and multimedia. Having had the privilege of learning from some inspirational and engaging mentors, I have had the opportunity to study in many areas of both computer science and games and multimedia including:
+        ul.education-list
+          li Introduction Computer systems
+          li Introduction to multimedia
+          li Introduction to Programming
+          li Programming Concepts
+          li Further Programming
+          li Human Systems
+          li Models of Computing
+          li Program Design
+          li 3D Modelling and Rendering
+          li 3D Animation
+          li Compilers
+          li Machine Learning
+          li Program Analysis
+          li Natural Language Engineering
+          li Operating Systems
+          li Software Engineering
+          li Human Computer Interaction
+          li Web Computing
+          li Video Production Techniques
+          li Limits Of Computation
+          li Web 3D Apps
 
-      h3.mt-2 FAQ
-      h5.faq-question What is your favorite language?
-      .faq-answer.mb-4 That is easy, Ruby.
-      h5.faq-question Why?
-      .faq-answer.mb-4 Anyone who has used Ruby doesn't need to ask this question. It's freedom, expressivess, natural feel, and of course, the meta. After a while Ruby stops becoming just a language and starts to become a companion, a way of thinking, and a lifestyle.
-      h5.faq-question What is your favourite Method?
-      .faq-answer.mb-4 method_missing, no contest.
-      h5.faq-question How did you learn to speak Japanese?
-      .faq-answer.mb-4 Through necessity, instead of going to a language school and slowly learning at my own pace, I decided to throw myself into the lion's den where I had no choice other than to learn it. I like to apply this learning method to many skills I learn, whether in work or private, if a skill or technique is required of me to complete a task I will get stuck in at full charge to learn what is needed at a rapid pace.
-      h5.faq-question What are your goals for the future?
-      .faq-answer.mb-4 To be a part of a team that delivers quality, cutting edge systems using best practices and not afraid to try out new technologies. To create systems and work in projects that make a difference to people's / businesses' lives, that I can be proud to have been a part of.
-      h5.faq-question What are your hobbies / interests outside of work life?
-      .faq-answer.mb-4 Learning. I love to find out about new technologies and techniques and give them a try, as well as keeping up to date with some of my other interests outside of computer science such as phsycics. I also of course love to spend time and play with my amazing daughter Skye, wife Mami, and our three doggies Coffee, Tea, and Frappuccino.
-      h5.faq-question What is your work ethic?
-      .faq-answer.mb-1 I am never afraid to get stuck in or afraid of failure, my first thought in any task in work is that nothing is too great or difficult that it cannot be completed without perserverance. I recently stumbled upon a quote which I think reflects my approach to work and study quite well:
-      br
-      .faq-quote.text-muted Don't wish it was easier, wish you were better. Don't wish for less problems, wish for more skills. Don't wish for less challenges, wish for more wisdom.
-      strong.mb-4
-        |- Jim Rohn
+        p I also studied Physics, Mathematics with Mechanics, Music Technology, and Music during my college years, as well as studying at a high school in Kyoto Japan for a year and a half before enrolling in University.
+
+        h3.mt-2 FAQ
+        h5.faq-question What is your favorite language?
+        .faq-answer.mb-4 That is easy, Ruby.
+        h5.faq-question Why?
+        .faq-answer.mb-4 Anyone who has used Ruby doesn't need to ask this question. It's freedom, expressivess, and natural feel. After a while Ruby stops becoming just a language and starts to become a way of thinking, and a workstyle.
+        h5.faq-question What is your favourite Method?
+        .faq-answer.mb-4 method_missing, no contest.
+        h5.faq-question What are your goals for the future?
+        .faq-answer.mb-4 To be a part of a team that delivers quality, cutting edge systems using best practices and not afraid to try out new technologies. To create systems and work in projects that make a difference to people's / businesses' lives, that I can be proud to have been a part of. Further down the line I would like to start my own business, or co-found a business that provides solutions that really make a difference to people's daily lives.
+        h5.faq-question What are your hobbies / interests outside of work life?
+        .faq-answer.mb-4 Learning. I love to find out about new technologies and techniques and give them a try whether that be through buying books on new topics or reading blogs and posts from the community. I also enjoy keeping up to date with some of my other interests outside of computer science such as phsycics via things like New Scientist magazine. I also of course love to spend time and play with my amazing daughters Skye and Luna, wife Mami, and our three doggies Coffee, Tea, and Frappuccino.
+        h5.faq-question What is your work ethic?
+        .faq-answer.mb-1 I am never afraid to get stuck in or afraid of failure, my first thought in any task in work is that nothing is too great or difficult that it cannot be completed without perserverance. I recently stumbled upon a quote which I think reflects my approach to work and study quite well:
+        br
+        .faq-quote.text-muted Don't wish it was easier, wish you were better. Don't wish for less problems, wish for more skills. Don't wish for less challenges, wish for more wisdom.
+        strong.mb-4
+          |- Jim Rohn
 
 
-
-
-
-    .col-lg-3.col-md-12.mt-2
-      = render 'shared/contact_bar'
-      = render 'shared/recent_activities'
+      .col-lg-3.col-md-12.mt-2
+        = render 'shared/profile_image'
+        = render 'shared/contact_bar'
+        = render 'shared/recent_activities'

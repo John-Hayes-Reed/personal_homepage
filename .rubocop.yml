@@ -13,6 +13,7 @@ AllCops:
     - 'log/**/*'
     - Gemfile
     - Rakefile
+    - Guardfile
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/FrozenStringLiteralComment:

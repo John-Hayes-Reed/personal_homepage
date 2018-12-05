@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
+ruby '2.5.3'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -42,6 +42,7 @@ gem 'enumerize'
 gem 'font-awesome-rails'
 gem 'redcarpet'
 gem 'slim'
+gem 'tty-markdown'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
