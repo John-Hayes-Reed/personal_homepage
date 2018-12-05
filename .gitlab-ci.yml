@@ -1,59 +1,110 @@
-image: "ruby:2.5.1"
+image: ruby:2.5.3
+
+cache:
+  paths:
+    - vendor/ruby
+    - node_modules
 
 services:
   - postgres:latest
 
 variables:
-  POSTGRES_DB: personal_homepage_test
-
-cache:
-  paths:
-    - vendor/ruby
-
-before_script:
-  - apt-get update -qy
-  - apt-get install -y nodejs
-  - ruby -v                                   # Print out ruby version for debugging
-  - gem install bundler  --no-ri --no-rdoc    # Bundler is not installed with the image
-  - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
+  BUNDLE_PATH: vendor/ruby
+  DB_HOST: postgres
 
 stages:
+  - build
   - review
-  - test
   - deploy
 
-rubocop:
-  stage: review
-  script:
-    - rubocop
-
-rails-spec:
-  stage: test
-  environment: test
-  variables:
-    DATABASE_URL: postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB
-  script:
-    - bundle install
-    - bundle exec rake db:migrate RAILS_ENV=test
-    - bundle exec rake db:seed RAILS_ENV=test
-    - bundle exec rspec spec
-
-deploy-staging:
-  stage: deploy
-  only:
-    - develop
-  type: deploy
-  environment: staging
-  script:
-    - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
-
-deploy-production:
-  stage: deploy
-  only:
+install_and_cache_dependencies:
+  stage: build
+  except:
     - master
-  type: deploy
-  environment: production
+    - tags
+  only:
+    - pushes
   script:
-    - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME --api-key=$HEROKU_PRODUCTION_KEY
+    - apt-get update -qy
+    - apt-get install -y nodejs
+    - gem install bundler --no-ri --no-rdoc
+    - bundle install -j $(nproc) --path vendor
+    - ruby -v
+
+code_review:
+  stage: review
+  except:
+    - master
+    - tags
+  only:
+    - pushes
+  script:
+    - apt-get update -qy
+    - apt-get install -y nodejs
+    - gem install bundler --no-ri --no-rdoc
+    - bundle install -j $(nproc) --path vendor
+    - bundle exec rubocop
+
+unit_tests:
+  stage: review
+  except:
+    - master
+    - tags
+  only:
+    - pushes
+  script:
+    - apt-get update -qy
+    - apt-get install -y nodejs
+    - gem install bundler --no-ri --no-rdoc
+    - bundle install -j $(nproc) --path vendor
+    - bundle exec rails db:create RAILS_ENV=test
+    - bundle exec rails db:schema:load RAILS_ENV=test
+    - bundle exec rails spec
+
+# feature_tests:
+#   stage: review
+#   except:
+#     - master
+#     - tags
+#   only:
+#     - pushes
+#   script:
+#     - apt-get update -qy
+#     - apt-get install -y nodejs
+#     - gem install bundler --no-ri --no-rdoc
+#     - bundle install -j $(nproc) --path vendor
+#     - bundle exec rails db:create RAILS_ENV=test
+#     - bundle exec rails db:schema:load RAILS_ENV=test
+#     - bundle exec cucumber
+
+# deploy_to_staging:
+#   stage: deploy
+#   script:
+#     - apt-get update -y -q=2
+#     - apt-get install -y -q=2 software-properties-common apt-transport-https
+#     - add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+#     - curl -L https://cli-assets.heroku.com/apt/release.key | apt-key add -
+#     - apt-get update -y -q=2
+#     - apt-get install -y -q=2 git heroku
+#     - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/todotodone-staging.git
+#     - git push -f heroku HEAD:master
+#     - heroku run rails db:migrate --app todotodone-staging
+#     - heroku run rails assets:precompile --app todotodone-staging
+#   only:
+#     - master
+
+deploy_to_production:
+  stage: deploy
+  script:
+    - apt-get update -y -q=2
+    - apt-get install -y -q=2 software-properties-common apt-transport-https
+    - add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+    - curl -L https://cli-assets.heroku.com/apt/release.key | apt-key add -
+    - apt-get update -y -q=2
+    - apt-get install -y -q=2 git heroku
+    - git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/johnhayesreed-homepage.git
+    - git push -f heroku HEAD:master
+    - heroku run rails db:migrate --app johnhayesreed-homepage
+    - heroku run rails assets:precompile --app johnhayesreed-homepage
+  only:
+    - tags
