@@ -27,7 +27,7 @@ install_and_cache_dependencies:
   script:
     - apt-get update -qy
     - apt-get install -y nodejs
-    - gem install bundler --no-ri --no-rdoc
+    - gem install bundler --no-document
     - bundle install -j $(nproc) --path vendor
     - ruby -v
 
@@ -41,7 +41,7 @@ code_review:
   script:
     - apt-get update -qy
     - apt-get install -y nodejs
-    - gem install bundler --no-ri --no-rdoc
+    - gem install bundler --no-document
     - bundle install -j $(nproc) --path vendor
     - bundle exec rubocop
 
@@ -55,7 +55,7 @@ unit_tests:
   script:
     - apt-get update -qy
     - apt-get install -y nodejs
-    - gem install bundler --no-ri --no-rdoc
+    - gem install bundler --no-document
     - bundle install -j $(nproc) --path vendor
     - bundle exec rails db:create RAILS_ENV=test
     - bundle exec rails db:schema:load RAILS_ENV=test
@@ -71,7 +71,7 @@ unit_tests:
 #   script:
 #     - apt-get update -qy
 #     - apt-get install -y nodejs
-#     - gem install bundler --no-ri --no-rdoc
+#     - gem install bundler --no-document
 #     - bundle install -j $(nproc) --path vendor
 #     - bundle exec rails db:create RAILS_ENV=test
 #     - bundle exec rails db:schema:load RAILS_ENV=test
